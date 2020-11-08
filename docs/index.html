@@ -62,16 +62,123 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
+				<a href="#original-insructions" id="original-insructions" style="color: inherit; text-decoration: none;">
+					<h1>Original Insructions</h1>
+				</a>
+				<a href="#instructions" id="instructions" style="color: inherit; text-decoration: none;">
+					<h2>Instructions</h2>
+				</a>
+				<ol>
+					<li>Please solve the following problem using the language your interviewer asked you to use, either <code>JavaScript</code> or <code>Java</code>. </li>
+					<li>We are looking for clean, well factored code in order to start a conversation with you. </li>
+					<li>Treat this problem as a library. No UI or file/console input is expected or required.</li>
+					<li>Provide a full suite of unit tests.</li>
+					<li>Add a <code>README.md</code> file that at least includes:<ul>
+							<li>runtime versions</li>
+							<li>how to install any dependencies</li>
+							<li>how to run your tests from the command line</li>
+						</ul>
+					</li>
+					<li>Clone this repo, and create a feature branch to work on.</li>
+					<li>Please commit your work regularly as you go, so we can see how you work through a problem.</li>
+					<li>Create a <a href="https://docs.gitlab.com/ee/gitlab-basics/add-merge-request.html">Merge Request</a> into the <code>master</code> branch from your branch when you are ready for us to review your solution.</li>
+				</ol>
+				<a href="#pricing-problem" id="pricing-problem" style="color: inherit; text-decoration: none;">
+					<h2>Pricing Problem</h2>
+				</a>
+				<p>We have a network of vendors who re-sell our products. We wish to provide them an application to calculate the total cost of an order.</p>
+				<p>The app needs to give volume discounts and include sales tax.</p>
+				<p>Another system will accept input from the user, and will call this component with 3 inputs:</p>
+				<ul>
+					<li>number of items</li>
+					<li>price per item</li>
+					<li>2-letter province/state code</li>
+				</ul>
+				<p>The application should output the total price.</p>
+				<p>The total price is calculated by:</p>
+				<ul>
+					<li>calculate the total cost for the items</li>
+					<li>deduct discount based on the quantity</li>
+					<li>add sales tax based on the province/state code</li>
+				</ul>
+				<p>The following tables give the discount rate and tax rates:</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Order Value</th>
+							<th align="right">Discount Rate</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>$1,000</td>
+							<td align="right">3%</td>
+						</tr>
+						<tr>
+							<td>$5,000</td>
+							<td align="right">5%</td>
+						</tr>
+						<tr>
+							<td>$7,000</td>
+							<td align="right">7%</td>
+						</tr>
+						<tr>
+							<td>$10,000</td>
+							<td align="right">10%</td>
+						</tr>
+				</tbody></table>
+				<table>
+					<thead>
+						<tr>
+							<th>Province</th>
+							<th align="right">Tax Rate</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>AB</td>
+							<td align="right">5%</td>
+						</tr>
+						<tr>
+							<td>ON</td>
+							<td align="right">13%</td>
+						</tr>
+						<tr>
+							<td>QC</td>
+							<td align="right">14.975%</td>
+						</tr>
+						<tr>
+							<td>MI</td>
+							<td align="right">6%</td>
+						</tr>
+						<tr>
+							<td>DE</td>
+							<td align="right">0%</td>
+						</tr>
+				</tbody></table>
+				<a href="#example-1" id="example-1" style="color: inherit; text-decoration: none;">
+					<h3>Example 1:</h3>
+				</a>
+				<pre><code>Input:  <span class="hljs-number">500</span> items, $<span class="hljs-number">1</span> per item, Ontario
+Output: $<span class="hljs-number">565.00</span></code></pre>
+				<a href="#example-2" id="example-2" style="color: inherit; text-decoration: none;">
+					<h3>Example 2:</h3>
+				</a>
+				<pre><code>Input:  <span class="hljs-number">3600</span> items, $<span class="hljs-number">2.25</span> per item, Michigan
+Output: $<span class="hljs-number">7984.98</span></code></pre>
+				<a href="#development-instruction" id="development-instruction" style="color: inherit; text-decoration: none;">
+					<h1>Development Instruction</h1>
+				</a>
 				<a href="#calculate-total-cost-price" id="calculate-total-cost-price" style="color: inherit; text-decoration: none;">
-					<h1>Calculate Total Cost Price</h1>
+					<h2>Calculate Total Cost Price</h2>
 				</a>
 				<p>Runtime versions:</p>
 				<ul>
 					<li>node v12.18.0</li>
 					<li>npm 6.14.4</li>
 				</ul>
-				<p>##Library function signature:</p>
-				<p>Thre are two variations within this library.</p>
+				<a href="#library-function-signature" id="library-function-signature" style="color: inherit; text-decoration: none;">
+					<h3>Library function signature:</h3>
+				</a>
+				<p>There are two variations within this library.</p>
 				<p>The first variation takes 3 input formal parameters as follows:</p>
 				<pre><code>cal<span class="hljs-constructor">TotalPrice(<span class="hljs-params">numItems</span>: <span class="hljs-params">number</span> | <span class="hljs-params">string</span>, <span class="hljs-params">pricePerItem</span>: <span class="hljs-params">number</span> | <span class="hljs-params">string</span>, <span class="hljs-params">provinceStateCode</span>: <span class="hljs-params">string</span>)</span> : number</code></pre><p>numItems = number of items in zero or positive integer (number or string typed)
 					pricePerItem = Price per item (Unit price) in zero or positive floating number (number or string typed)
@@ -89,11 +196,22 @@
   <span class="hljs-attribute">provinceStateCode</span>: string;
 }</code></pre><p>as input formal parameters.  Function signature as follows:</p>
 				<pre><code><span class="hljs-function"><span class="hljs-title">calTotalPriceByInput</span><span class="hljs-params">(calTotalPriceInput: CalTotalPriceInput)</span></span> : number</code></pre><p>Similarly, IllegalArgumentException will be thrown when invalid values are passed into this function.</p>
-				<p>##Dependency Installation:</p>
+				<a href="#dependency-installation" id="dependency-installation" style="color: inherit; text-decoration: none;">
+					<h3>Dependency Installation:</h3>
+				</a>
 				<pre><code><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> &lt;working_directory&gt;</span>
-<span class="hljs-meta">$</span><span class="bash"> npm install</span></code></pre><p>##Running Tests from the command line</p>
-				<pre><code><span class="hljs-meta">$</span><span class="bash"> npm <span class="hljs-built_in">test</span></span></code></pre><p>##Building the library</p>
-				<pre><code>$ npm <span class="hljs-keyword">run</span><span class="bash"> clean build</span></code></pre><p>##Building library distribution</p>
+<span class="hljs-meta">$</span><span class="bash"> npm install</span></code></pre>
+				<a href="#running-tests-from-the-command-line" id="running-tests-from-the-command-line" style="color: inherit; text-decoration: none;">
+					<h3>Running Tests from the command line</h3>
+				</a>
+				<pre><code><span class="hljs-meta">$</span><span class="bash"> npm <span class="hljs-built_in">test</span></span></code></pre>
+				<a href="#building-the-library" id="building-the-library" style="color: inherit; text-decoration: none;">
+					<h3>Building the library</h3>
+				</a>
+				<pre><code>$ npm <span class="hljs-keyword">run</span><span class="bash"> clean build</span></code></pre>
+				<a href="#building-library-distribution" id="building-library-distribution" style="color: inherit; text-decoration: none;">
+					<h3>Building library distribution</h3>
+				</a>
 				<pre><code>$ npm <span class="hljs-keyword">run</span><span class="bash"> bundle</span></code></pre>
 			</div>
 		</div>
