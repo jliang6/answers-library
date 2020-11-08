@@ -5,9 +5,9 @@ Runtime versions:
 * node v12.18.0
 * npm 6.14.4
 
-##Library function signature:
+## Library function signature:
 
-Thre are two variations within this library.
+There are two variations within this library.
 
     
 The first variation takes 3 input formal parameters as follows:
@@ -40,19 +40,19 @@ as input formal parameters.  Function signature as follows:
     
 Similarly, IllegalArgumentException will be thrown when invalid values are passed into this function.
 
-##Dependency Installation:
+## Dependency Installation:
 
     $ cd <working_directory>
     $ npm install
     
-##Running Tests from the command line
+## Running Tests from the command line
 
     $ npm test
     
-##Building the library
+## Building the library
 
     $ npm run clean build
     
-##Building library distribution
+## Building library distribution
 
     $ npm run bundle
